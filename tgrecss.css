@@ -1,0 +1,352 @@
+/* ══════════════════════════════════════════════════════
+   TGRERA Complaint Form — Stylesheet
+   File: styles.css
+   ══════════════════════════════════════════════════════ */
+
+/* ── Global ─────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  color: #2c3e50;
+  padding: 20px;
+}
+
+/* ── Form Wrapper ────────────────────────────────────── */
+.form-wrapper {
+  max-width: 860px;
+  margin: 30px auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* ── Form Header ─────────────────────────────────────── */
+.form-header {
+  background: linear-gradient(135deg, #1a5276, #2980b9);
+  padding: 28px 32px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.form-header h1 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.form-header p {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: #aed6f1;
+}
+
+/* ── Progress Bar ────────────────────────────────────── */
+.progress-bar-wrapper {
+  background: #e9ecef;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  transition: width 0.4s ease;
+}
+
+/* ── Mandatory Note ──────────────────────────────────── */
+.mandatory-note {
+  background: #fff3cd;
+  border-left: 4px solid #f0ad4e;
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #856404;
+  border-radius: 4px;
+  margin: 16px 32px;
+}
+
+/* ── Section Header ──────────────────────────────────── */
+.section-header {
+  background: #1a5276;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-left: 5px solid #f39c12;
+}
+
+/* ── Form Body ───────────────────────────────────────── */
+.form-body {
+  padding: 24px 32px;
+}
+
+/* ── Form Group ──────────────────────────────────────── */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1a5276;
+  margin-bottom: 6px;
+}
+
+.form-group label .required {
+  color: #c0392b;
+  margin-left: 3px;
+}
+
+/* ── Inputs, Selects, Textareas ──────────────────────── */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #2c3e50;
+  background: #fdfdfd;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2980b9;
+  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.15);
+  background: #fff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ── Row Layout ──────────────────────────────────────── */
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.row .form-group {
+  flex: 1;
+}
+
+/* ── Checkbox Group ──────────────────────────────────── */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+}
+
+.checkbox-group label {
+  font-weight: normal;
+  font-size: 13px;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #1a5276;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ── Hint Text ───────────────────────────────────────── */
+.hint {
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ── Error Message ───────────────────────────────────── */
+.error-msg {
+  color: #c0392b;
+  font-size: 11px;
+  margin-top: 4px;
+  font-weight: normal;
+}
+
+/* ── Declaration Box ─────────────────────────────────── */
+.declaration-box {
+  background: #eaf4fb;
+  border-left: 5px solid #1a5276;
+  padding: 16px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* ── Submit Button ───────────────────────────────────── */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #1a5276, #2980b9);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #154360, #1a5276);
+  transform: translateY(-1px);
+}
+
+/* ── Success Message ─────────────────────────────────── */
+#successMessage {
+  display: none;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 28px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+#successMessage h2 {
+  color: #155724;
+  margin-bottom: 16px;
+}
+
+/* ── Success Table ───────────────────────────────────── */
+.success-table {
+  margin: 0 auto;
+  text-align: left;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.success-table td {
+  padding: 6px 16px 6px 0;
+}
+
+.success-table td:first-child {
+  font-weight: bold;
+  color: #1a5276;
+  white-space: nowrap;
+}
+
+.complaint-id-code {
+  background: #e8f5e9;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #155724;
+  font-family: monospace;
+}
+
+/* ── Print Button ────────────────────────────────────── */
+.print-btn {
+  margin-top: 16px;
+  padding: 10px 28px;
+  background: #1a5276;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.print-btn:hover {
+  background: #154360;
+}
+
+/* ── Form Footer ─────────────────────────────────────── */
+.form-footer {
+  background: #2c3e50;
+  padding: 14px;
+  text-align: center;
+  font-size: 11px;
+  color: #bdc3c7;
+}
+
+.form-footer a {
+  color: #aed6f1;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-body {
+    padding: 16px;
+  }
+
+  .form-header {
+    padding: 20px 16px;
+  }
+
+  .form-header h1 {
+    font-size: 18px;
+  }
+
+  .mandatory-note {
+    margin: 12px 16px;
+  }
+}
+
+/* ── Print Styles ────────────────────────────────────── */
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+
+  .form-wrapper {
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .submit-btn,
+  .print-btn {
+    display: none;
+  }
+}

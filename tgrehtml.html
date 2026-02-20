@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TGRERA — Complaint Filing Form</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<div class="form-wrapper">
+
+  <!-- ── Form Header ──────────────────────────────── -->
+  <div class="form-header">
+    <h1>🏛️ TGRERA Complaint Filing System</h1>
+    <p>Telangana Real Estate Regulatory Authority — Official Complaint Portal</p>
+  </div>
+
+  <!-- ── Progress Bar ─────────────────────────────── -->
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- ── Mandatory Note ───────────────────────────── -->
+  <p class="mandatory-note">
+    ⚠️ Fields marked with <strong style="color:#c0392b;">*</strong>
+    are mandatory. Ensure all details are accurate before submission.
+  </p>
+
+  <form id="tgrera-form" novalidate>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION A — Complainant Details
+         ═══════════════════════════════════════════════ -->
+    <p class="section-header">📋 SECTION A — Complainant Details</p>
+    <div class="form-body">
+
+      <div class="form-group">
+        <label>Full Name <span class="required">*</span></label>
+        <input type="text" id="fullName" name="fullName"
+          placeholder="Enter your full legal name" required />
+      </div>
+
+      <div class="form-group">
+        <label>Father's / Husband's Name <span class="required">*</span></label>
+        <input type="text" id="fathersName" name="fathersName"
+          placeholder="Enter father's or husband's name" required />
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>Date of Birth <span class="required">*</span></label>
+          <input type="date" id="dob" name="dob" required />
+        </div>
+        <div class="form-group">
+          <label>Gender <span class="required">*</span></label>
+          <select id="gender" name="gender" required>
+            <option value="">-- Select --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Nationality <span class="required">*</span></label>
+          <input type="text" id="nationality" name="nationality"
+            value="Indian" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>Aadhaar Number <span class="required">*</span></label>
+          <input type="text" id="aadhaar" name="aadhaar"
+            placeholder="XXXX XXXX XXXX" maxlength="14" required />
+          <p class="hint">Format: 1234 5678 9012</p>
+        </div>
+        <div class="form-group">
+          <label>PAN Number</label>
+          <input type="text" id="pan" name="pan"
+            placeholder="ABCDE1234F" maxlength="10" />
+          <p class="hint">Format: ABCDE1234F (Uppercase)</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>Mobile Number <span class="required">*</span></label>
+          <input type="tel" id="mobile" name="mobile"
+            placeholder="10-digit mobile number" maxlength="10" required />
+        </div>
+        <div class="form-group">
+          <label>Alternate Mobile Number</label>
+          <input type="tel" id="altMobile" name="altMobile"
+            placeholder="Optional" maxlength="10" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="email"
+          placeholder="you@example.com" required />
+      </div>
+
+      <div class="form-group">
+        <label>Permanent Address <span class="required">*</span></label>
+        <textarea id="address" name="address" rows="3"
+          placeholder="House No., Street Name, Locality / Area" required></textarea>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>City / District <span class="required">*</span></label>
+          <input type="text" id="city" name="city"
+            placeholder="e.g. Hyderabad" required />
+        </div>
+        <div class="form-group">
+          <label>State <span class="required">*</span></label>
+          <select id="state" name="state" required>
+            <option value="">-- Select State --</option>
+            <option value="Telangana" selected>Telangana</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>PIN Code <span class="required">*</span></label>
+          <input type="text" id="pin" name="pin"
+            placeholder="500001" maxlength="6" required />
+        </div>
+      </div>
+
+    </div><!-- /Section A -->
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION B — Project & Builder Details
+         ═══════════════════════════════════════════════ -->
+    <p class="section-header">🏗️ SECTION B — Project & Builder Details</p>
+    <div class="form-body">
+
+      <div class="row">
+        <div class="form-group">
+          <label>Project Name <span class="required">*</span></label>
+          <input type="text" id="projectName" name="projectName"
+            placeholder="Name of the real estate project" required />
+        </div>
+        <div class="form-group">
+          <label>RERA Registration Number <span class="required">*</span></label>
+          <input type="text" id="reraRegNo" name="reraRegNo"
+            placeholder="P02400XXXXXXX" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Name of Promoter / Builder <span class="required">*</span></label>
+        <input type="text" id="promoterName" name="promoterName"
+          placeholder="Builder's name or company name" required />
+      </div>
+
+      <div class="form-group">
+        <label>Builder's Registered Address <span class="required">*</span></label>
+        <textarea id="builderAddress" name="builderAddress" rows="3"
+          placeholder="Builder's official registered office address" required></textarea>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>Builder's Contact Number</label>
+          <input type="tel" id="builderContact" name="builderContact"
+            placeholder="Optional" maxlength="10" />
+        </div>
+        <div class="form-group">
+          <label>Builder's Email Address</label>
+          <input type="email" id="builderEmail" name="builderEmail"
+            placeholder="builder@company.com (Optional)" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Project Location / Site Address <span class="required">*</span></label>
+        <textarea id="projectLocation" name="projectLocation" rows="3"
+          placeholder="Full address of the project / construction site" required></textarea>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>Type of Property <span class="required">*</span></label>
+          <select id="propertyType" name="propertyType" required>
+            <option value="">-- Select Type --</option>
+            <option value="Flat / Apartment">Flat / Apartment</option>
+            <option value="Independent Villa">Independent Villa</option>
+            <option value="Row House">Row House</option>
+            <option value="Plot">Plot</option>
+            <option value="Commercial Space">Commercial Space</option>
+            <option value="Office Space">Office Space</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Unit / Flat Number</label>
+          <input type="text" id="unitNumber" name="unitNumber"
+            placeholder="e.g. B-204 (if applicable)" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>Agreement / Sale Deed Number <span class="required">*</span></label>
+          <input type="text" id="agreementNo" name="agreementNo"
+            placeholder="Agreement or sale deed reference number" required />
+        </div>
+        <div class="form-group">
+          <label>Date of Agreement <span class="required">*</span></label>
+          <input type="date" id="agreementDate" name="agreementDate" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>Total Sale Consideration (₹) <span class="required">*</span></label>
+          <input type="number" id="totalSaleValue" name="totalSaleValue"
+            placeholder="e.g. 5000000" min="0" required />
+          <p class="hint">Enter amount in ₹ (Rupees)</p>
+        </div>
+        <div class="form-group">
+          <label>Amount Paid So Far (₹) <span class="required">*</span></label>
+          <input type="number" id="amountPaid" name="amountPaid"
+            placeholder="e.g. 2500000" min="0" required />
+          <p class="hint">Total amount paid to builder so far</p>
+        </div>
+      </div>
+
+    </div><!-- /Section B -->
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION C — Nature of Complaint
+         ═══════════════════════════════════════════════ -->
+    <p class="section-header">⚠️ SECTION C — Nature of Complaint</p>
+    <div class="form-body">
+
+      <div class="form-group">
+        <label>Category of Complaint <span class="required">*</span></label>
+        <select id="complaintCategory" name="complaintCategory" required>
+          <option value="">-- Select Category --</option>
+          <option value="Delayed Possession">Delayed Possession</option>
+          <option value="Refund of Amount">Refund of Amount</option>
+          <option value="Structural Defects">Structural Defects</option>
+          <option value="Non-disclosure of Information">Non-disclosure of Information</option>
+          <option value="Alteration of Sanctioned Plans">Alteration of Sanctioned Plans</option>
+          <option value="Failure to Execute Sale Deed">Failure to Execute Sale Deed</option>
+          <option value="Failure to Give Possession">Failure to Give Possession</option>
+          <option value="False Advertisement">False Advertisement</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>Expected Date of Possession <span class="required">*</span></label>
+          <input type="date" id="expectedPossession"
+            name="expectedPossession" required />
+        </div>
+        <div class="form-group">
+          <label>Current Status of Possession <span class="required">*</span></label>
+          <select id="currentStatus" name="currentStatus" required>
+            <option value="">-- Select Status --</option>
+            <option value="Not Yet Started">Not Yet Started</option>
+            <option value="Under Construction">Under Construction</option>
+            <option value="Construction Stalled">Construction Stalled</option>
+            <option value="Completed But Not Delivered">Completed But Not Delivered</option>
+            <option value="Possession Delayed">Possession Delayed</option>
+            <option value="Possession Taken with Issues">Possession Taken with Issues</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Detailed Description of Complaint <span class="required">*</span></label>
+        <textarea id="description" name="description" rows="7"
+          placeholder="Describe your complaint in full detail:
+- When did the issue start?
+- What promises were made by the builder?
+- What communications took place?
+- What is the current situation?
+- Why are you filing this complaint?" required></textarea>
+        <p class="hint">Minimum 100 characters. Be as specific as possible.</p>
+      </div>
+
+      <div class="form-group">
+        <label>Relief / Remedy Sought <span class="required">*</span></label>
+        <textarea id="relief" name="relief" rows="3"
+          placeholder="e.g. Immediate possession of flat, refund of ₹X with interest..."
+          required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Compensation Amount Sought (₹)</label>
+        <input type="number" id="compensation" name="compensation"
+          placeholder="e.g. 500000 (Optional)" min="0" />
+        <p class="hint">Enter 0 if not seeking monetary compensation</p>
+      </div>
+
+    </div><!-- /Section C -->
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION D — Documents Checklist
+         ═══════════════════════════════════════════════ -->
+    <p class="section-header">📁 SECTION D — Documents Checklist</p>
+    <div class="form-body">
+
+      <p style="font-size:13px; color:#555; margin-bottom:12px;">
+        Please confirm the documents you have available to upload.
+        Mandatory documents <strong>must</strong> be submitted with your complaint.
+      </p>
+
+      <!-- Mandatory Documents -->
+      <div class="form-group">
+        <label>✅ Mandatory Documents <span class="required">*</span></label>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="doc_aadhaar" value="yes" />
+            Aadhaar Card Copy (Self-attested)
+          </label>
+          <label>
+            <input type="checkbox" name="doc_pan" value="yes" />
+            PAN Card Copy (Self-attested)
+          </label>
+          <label>
+            <input type="checkbox" name="doc_agreement" value="yes" />
+            Agreement for Sale / Sale Deed (Registered copy)
+          </label>
+          <label>
+            <input type="checkbox" name="doc_receipts" value="yes" />
+            Payment Receipts (All receipts of amount paid to builder)
+          </label>
+        </div>
+        <p class="hint">All 4 mandatory documents must be confirmed to proceed.</p>
+      </div>
+
+      <!-- Supporting Documents -->
+      <div class="form-group">
+        <label>📎 Supporting Documents <em>(If Available)</em></label>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="doc_allotment" value="yes" />
+            Builder's Allotment Letter
+          </label>
+          <label>
+            <input type="checkbox" name="doc_comms" value="yes" />
+            Communication with Builder (Emails / Letters / WhatsApp)
+          </label>
+          <label>
+            <input type="checkbox" name="doc_photos" value="yes" />
+            Photographs / Supporting Evidence of Issue
+          </label>
+          <label>
+            <input type="checkbox" name="doc_notice" value="yes" />
+            Legal Notice Sent to Builder (if any)
+          </label>
+          <label>
+            <input type="checkbox" name="doc_brochure" value="yes" />
+            Project Brochure / Advertisement Material
+          </label>
+          <label>
+            <input type="checkbox" name="doc_bankstatement" value="yes" />
+            Bank Statements / Loan Documents
+          </label>
+        </div>
+      </div>
+
+    </div><!-- /Section D -->
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION E — Declaration & Submission
+         ═══════════════════════════════════════════════ -->
+    <p class="section-header">🖊️ SECTION E — Declaration & Submission</p>
+    <div class="form-body">
+
+      <div class="declaration-box">
+        <strong>📜 Declaration by the Complainant:</strong><br><br>
+        I hereby solemnly declare that all the information provided in this
+        complaint form is <strong>true, complete, and correct</strong> to the
+        best of my knowledge and belief. I understand that providing false or
+        misleading information is a punishable offence under applicable laws
+        including the Real Estate (Regulation & Development) Act, 2016. I
+        request TGRERA to take necessary action against the respondent as per
+        the provisions of the said Act.
+      </div>
+
+      <div class="form-group">
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="declarationAgree"
+              name="declarationAgree" value="agreed" required />
+            <strong>
+              I have read and agree to the above declaration.
+              <span class="required">*</span>
+            </strong>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>
+          Digital Signature (Type Your Full Name)
+          <span class="required">*</span>
+        </label>
+        <input type="text" id="digitalSignature" name="digitalSignature"
+          placeholder="Type your full name as digital signature" required />
+        <p class="hint">Typing your full name constitutes your digital signature.</p>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit-btn">
+        🚀 Submit Complaint to TGRERA
+      </button>
+
+      <!-- Success Message -->
+      <div id="successMessage"></div>
+
+    </div><!-- /Section E -->
+
+  </form><!-- /tgrera-form -->
+
+  <!-- ── Form Footer ───────────────────────────────── -->
+  <div class="form-footer">
+    © 2026 TGRERA — Telangana Real Estate Regulatory Authority &nbsp;|&nbsp;
+    <a href="https://rera.telangana.gov.in" target="_blank">
+      rera.telangana.gov.in
+    </a>
+    &nbsp;|&nbsp; 📞 040-23390114
+  </div>
+
+</div><!-- /form-wrapper -->
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
